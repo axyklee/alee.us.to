@@ -1,0 +1,11 @@
+{{ $allparams := .Params }}
+
+<table>
+    <tbody>
+        <tr>
+            {{ range $allparams }}
+            <td><img src="{{.}}"></td>
+            {{ end }}
+        </tr>
+    </tbody>
+</table>
