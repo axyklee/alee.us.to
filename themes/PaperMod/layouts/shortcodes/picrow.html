@@ -1,10 +1,12 @@
-{{ $allparams := .Params }}
+{{ $path := .Get 0}}
+{{ $path := strings.Replace $path "/static" "" }}
+{{ $files := readDir (.Get 0) }}
 
 <table>
     <tbody>
         <tr>
-            {{ range $allparams }}
-            <td><img src="{{.}}"></td>
+            {{ range $files }}
+            <td><img src="{{$path}}/{{.Name}}"></td>
             {{ end }}
         </tr>
     </tbody>

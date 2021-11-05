@@ -25,13 +25,13 @@ searchHidden: true
 ---
 
 ## [Attendance System](https://abs.aaronlee.tech)
-{{< carousel "https://i.imgur.com/oqecDic.png" "https://i.imgur.com/qYhPhte.png" "https://i.imgur.com/rBxQiC8.png" "https://i.imgur.com/3wf9DLY.png" "https://i.imgur.com/i9x2TyL.png" "https://i.imgur.com/Pkav4uT.png" >}}
+{{< carousel "/static/img/projects.md/attendance" >}}
 I made our school's shiny new online attendance system with the help of my homeroom teacher to replace the old paper-based system. It is closed-sourced, though.
 
 ----
 
 ## [URL Shortener](https://github.com/aaronleetw/URL_Shortener)
-{{< carousel "https://i.imgur.com/eVD9CtQ.png" "https://i.imgur.com/AsYmlrl.png" "https://i.imgur.com/qpdi5IY.png" >}}
+{{< carousel "/static/img/projects.md/url" >}}
 This is written with Flask and uses Firebase for database and authentication. You can now easily host your own URL shortener!
 
 ----
@@ -43,7 +43,7 @@ EZHTML: An easy ~~copy and paste machine~~ static website generator written in C
 
 ## [AdditionTranier](https://github.com/aaronleetw/AdditionTrainer)
 This android app trains your addition by continuously giving you short, easy addition problems to solve in a given time.
-{{< picrow "https://i.imgur.com/HP9l6A2.png" "https://i.imgur.com/NuwbPKw.png" "https://i.imgur.com/luLVmfc.png" "https://i.imgur.com/e57qVjT.png" >}}
+{{< picrow "/static/img/projects.md/additiontrainer" >}}
 
 ----
 
@@ -55,7 +55,7 @@ Built using [Assistant-Relay](https://github.com/greghesp/assistant-relay) as th
 
 ## [FlipCardGame](https://github.com/aaronleetw/FlipCardGame)
 Fun little project I made when I was learning iOS Swift.
-{{< picrow "https://i.imgur.com/60IwSx1.jpg" "https://i.imgur.com/HOFJhYu.jpg" "https://i.imgur.com/OqwWjo0.jpg" "https://i.imgur.com/Vpykdiq.jpg" >}}
+{{< picrow "/static/img/projects.md/flipcardgame" >}}
 
 ----
 
