@@ -29,6 +29,12 @@
     --border: rgb(51, 51, 51);
 }
 
+body {
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .list {
     background: var(--code-bg);
 }

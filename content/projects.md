@@ -66,3 +66,11 @@ What you are looking at right now. Built using [Hugo](https://gohugo.io) and the
 
 ## [Miscellaneous Coding Projects](https://github.com/aaronleetw/Coding-Projects)
 This repo contains all the small side useless projects I created when I was bored.
+
+{{< rawhtml >}}
+<style>
+    body {
+        background-color: var(--code-bg);
+    }
+</style>
+{{< /rawhtml >}}

@@ -26,5 +26,31 @@
             speed: 300,
             slidesToShow: 1,
         });
+        $('.carousel').on('init', function(event, slick){
+            if (localStorage.getItem("pref-theme") === "dark") {
+                var all = $(".slick-arrow")
+                all.each(function(index, element){
+                    $(element).removeClass("light")
+                });
+            } else if (localStorage.getItem("pref-theme") === "light") {
+                var all = $(".slick-arrow")
+                all.each(function(index, element){
+                    $(element).addClass("light")
+                });
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                var all = $(".slick-arrow")
+                all.each(function(index, element){
+                    $(element).removeClass("light")
+                });
+            }
+        });
     });
 </script>
+<style>
+    .slick-arrow:before {
+        color: white;
+    }
+    .slick-arrow.light:before {
+        color: gray !important;
+    }
+</style>
