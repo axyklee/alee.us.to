@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=IBM+Plex+Mono&display=swap');
+        body {
+            background-color: rgb(245, 245, 245);
+        }
+        .container {
+            margin: 50px;
+            text-align: center;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-smooth: antialiased;
+        }
+        .container .title h1 {
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+        .container .title h2 {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 60%;
+            min-width: 500px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            box-shadow: 0 0 10px #ccc;
+            outline: none;
+        }
+        input::-webkit-input-placeholder {
+            color: rgb(211, 211, 211);
+        }
+        input::-moz-placeholder {
+            color: rgb(211, 211, 211);
+        }
+        input:-ms-input-placeholder {
+            color: rgb(211, 211, 211);
+        }
+        .shorten-btn {
+            width: 40%;
+            min-width: 325px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid rgb(44, 44, 44);
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #ccc;
+            background-color: rgb(46, 46, 46);
+            color: rgb(235, 235, 235);
+            outline: none;
+        }
+        .shorten-btn:hover {
+            box-shadow: 0 0 20px rgb(126, 126, 126);
+            outline: none;
+        }
+        .shorten-btn:active {
+            box-shadow: 0 0 20px rgb(126, 126, 126);
+            outline: none;
+        }
+        #userEdit {
+            display: relative;
+        }
+        #response {
+            width: 60%;
+            min-width: 300px;
+            max-width: 80%;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid rgb(44, 44, 44);
+            padding: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #ccc;
+            background-color: rgb(46, 46, 46);
+            outline: none;
+            display: none;
+        }
+        #response:hover {
+            box-shadow: 0 0 20px rgb(126, 126, 126);
+            outline: none;
+        }
+        #response a, #response a:visited, #response a:hover, #response a:active, #response span {
+            white-space:nowrap;
+            color:rgb(211, 211, 211);
+        }
+        #response #succ, #response .succ {
+            color: #90ee90;
+            display: none;
+        } #response #fail {
+            color: #ff0000;
+            display: none;
+        } #response .fail {
+            color: #ff0000;
+        } #response #listMode {
+            color: #00bfff;
+            display: none;
+        }
+        #response #showRes {
+            margin-bottom: 10px;
+        }
+        .shorten-btn.short {
+            width: 20%;
+            min-width: 200px;
+        }
+        kbd {
+            line-height: 10px;
+            font-weight: bold;
+        }
+        .text-muted {
+            color: rgb(139, 139, 139);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>URL Shortener</h1>
+            <h2>For Aaron using the reurl API</h2>
+        </div>
+        <div id="userEdit">
+            <input type="text" id="URL" placeholder="Destination URL">
+            <button class="shorten-btn" id="shorten" onclick="shorten(0)">Shorten <kbd>[↵]</kbd></button>
+            <button class="shorten-btn short" id="list" onclick="shorten(1)">Add to List</button>
+        </div>
+        <h2 id="response">
+            <div id="showRes">
+                <span id="succ">Successfully shortened!</span>
+                <span id="fail">Failed to shorten!</span>
+                <span id="listMode">List Mode</span>
+            </div>
+            <div id="showMsg">
+                <a id="responseURL" href="" target="_blank"></a>
+                <span id="error"></span>
+            </div>
+        </h2>
+        <p class="text-muted">Request interval is 1 seconds.</p>
+    </div>
+    <script>
+        var usedListMode = false;
+        var lastRequestTime = 0;
+        function shorten(tp) {
+            if (new Date().getTime() - lastRequestTime < 1000) {
+                return;
+            }
+            let url = document.getElementById('URL').value;
+            if (!url.startsWith('https://') && !url.startsWith('http://')) url = 'https://' + url;
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://api.reurl.cc/shorten', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('reurl-api-key', '4070ff49d794e033195f3b663c974755ecd0b430939e04df8a38b58d65165567c4f5d6');
+            xhr.send(JSON.stringify({url: url}));
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    if (tp == 0) {
+                        document.getElementById('response').style.display = 'block';
+                        document.getElementById('succ').style.display = 'block';
+                        document.getElementById('fail').style.display = 'none';
+                        document.getElementById('listMode').style.display = 'none';
+                        document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                        document.getElementById('responseURL').href = xhr.responseText;
+                        document.getElementById('responseURL').href = JSON.parse(xhr.response)['short_url'];
+                        document.getElementById('responseURL').innerHTML = JSON.parse(xhr.response)['short_url'];
+                        document.getElementById('error').innerHTML = "";
+                        usedListMode = false;
+                    } else if (tp == 1) {
+                        if (!usedListMode) document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                        document.getElementById('response').style.display = 'block';
+                        document.getElementById('succ').style.display = 'none';
+                        document.getElementById('fail').style.display = 'none';
+                        document.getElementById('listMode').style.display = 'block';
+                        if (usedListMode) document.getElementById('showMsg').innerHTML += `<br>`
+                        document.getElementById('showMsg').innerHTML += `<a id="responseURL" href="`+JSON.parse(xhr.response)['short_url']+`" target="_blank">`+JSON.parse(xhr.response)['short_url']+`</a>`;
+                        usedListMode = true;
+                    }
+                } else {
+                    if (tp == 0) {
+                        document.getElementById('response').style.display = 'block';
+                        document.getElementById('fail').style.display = 'block';
+                        document.getElementById('succ').style.display = 'none';
+                        document.getElementById('listMode').style.display = 'none';
+                        document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                        document.getElementById('error').innerHTML = JSON.parse(xhr.response)['msg'];
+                        document.getElementById('responseURL').innerHTML = "";
+                        usedListMode = false;
+                    } else if (tp == 1) {
+                        if (!usedListMode) document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                        document.getElementById('response').style.display = 'block';
+                        document.getElementById('fail').style.display = 'none';
+                        document.getElementById('succ').style.display = 'none';
+                        document.getElementById('listMode').style.display = 'block';
+                        if (usedListMode) document.getElementById('showMsg').innerHTML += `<br>`
+                        document.getElementById('showMsg').innerHTML += `<span id="error" class="fail">`+JSON.parse(xhr.response)['msg']+`</span>`;
+                        usedListMode = true;
+                    }
+                }
+                switchEnterKey();
+                lastRequestTime = Date.now();
+            }
+        }
+        function switchEnterKey() {
+            if (usedListMode) {
+                document.getElementById('list').innerHTML = 'Add to List <kbd>[↵]</kbd>';
+                document.getElementById('shorten').innerHTML = 'Shorten';
+            } else {
+                document.getElementById('list').innerHTML = 'Add to List';
+                document.getElementById('shorten').innerHTML = 'Shorten <kbd>[↵]</kbd>';
+            }
+        }
+        document.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                shorten(usedListMode ? 1 : 0);
+            }
+        });
+    </script>
+</body>
+</html>
