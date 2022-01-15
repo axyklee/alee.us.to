@@ -32,7 +32,7 @@
         }
         input {
             width: 60%;
-            min-width: 500px;
+            min-width: 400px;
             height: 50px;
             font-size: 20px;
             border-radius: 5px;
@@ -121,6 +121,9 @@
         } #response #listMode {
             color: #00bfff;
             display: none;
+        } #response #loading {
+            color: #ffff00;
+            display: none;
         }
         #response #showRes {
             margin-bottom: 10px;
@@ -151,6 +154,7 @@
         </div>
         <h2 id="response">
             <div id="showRes">
+                <span id="loading">Loading...</span>
                 <span id="succ">Successfully shortened!</span>
                 <span id="fail">Failed to shorten!</span>
                 <span id="listMode">List Mode</span>
@@ -166,7 +170,28 @@
         var usedListMode = false;
         var lastRequestTime = 0;
         function shorten(tp) {
+            document.getElementById("loading").style.display = "inline";
             if (new Date().getTime() - lastRequestTime < 1000) {
+                document.getElementById("loading").style.display = "none";
+                if (tp == 0) {
+                    document.getElementById('response').style.display = 'block';
+                    document.getElementById('fail').style.display = 'block';
+                    document.getElementById('succ').style.display = 'none';
+                    document.getElementById('listMode').style.display = 'none';
+                    document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                    document.getElementById('error').innerHTML = "Please wait for " + (new Date().getTime() - lastRequestTime)/1000 + " second(s) before requesting again.";
+                    document.getElementById('responseURL').innerHTML = "";
+                    usedListMode = false;
+                } else if (tp == 1) {
+                    if (!usedListMode) document.getElementById('showMsg').innerHTML = `<a id="responseURL" href="" target="_blank"></a><span id="error"></span>`;
+                    document.getElementById('response').style.display = 'block';
+                    document.getElementById('fail').style.display = 'none';
+                    document.getElementById('succ').style.display = 'none';
+                    document.getElementById('listMode').style.display = 'block';
+                    if (usedListMode) document.getElementById('showMsg').innerHTML += `<br>`
+                    document.getElementById('showMsg').innerHTML += `<span id="error" class="fail">`+"Please wait for " + (new Date().getTime() - lastRequestTime)/1000 + " second(s) before requesting again."+`</span>`;
+                    usedListMode = true;
+                }
                 return;
             }
             let url = document.getElementById('URL').value;
@@ -178,6 +203,7 @@
             xhr.send(JSON.stringify({url: url}));
             xhr.onload = function() {
                 if (xhr.status == 200) {
+                    document.getElementById("loading").style.display = "none";
                     if (tp == 0) {
                         document.getElementById('response').style.display = 'block';
                         document.getElementById('succ').style.display = 'block';
@@ -200,6 +226,7 @@
                         usedListMode = true;
                     }
                 } else {
+                    document.getElementById("loading").style.display = "none";
                     if (tp == 0) {
                         document.getElementById('response').style.display = 'block';
                         document.getElementById('fail').style.display = 'block';
