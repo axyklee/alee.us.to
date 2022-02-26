@@ -25,8 +25,9 @@ searchHidden: true
 ---
 
 ## [Attendance System](https://abs.aaronlee.tech)
+[this link might be dead because I'm not actively maintaining it]
 {{< carousel "/static/img/projects.md/attendance" >}}
-I made our school's shiny new online attendance system with the help of my homeroom teacher to replace the old paper-based system. It is closed-sourced, though.
+I made our school's shiny new online attendance system with the help of my homeroom teacher to replace the old paper-based system. It was used for about half a semester stably but was later dropped because the school's IT department decided the services this utilized was not suitable to our school's infrastructure. It is now [open-sourced here](https://github.com/aaronleetw/Attendance). I also created a much more robust [version 2](https://github.com/aaronleetw/Attendance/tree/v2) with MySQL, but was never presented.
 
 ----
 
@@ -38,6 +39,21 @@ This is written with Flask and uses Firebase for database and authentication. Yo
 
 ## [EZHTML](https://github.com/aaronleetw/EZHTML)
 EZHTML: An easy ~~copy and paste machine~~ static website generator written in C++ using fstream.
+
+----
+
+## [random](https://github.com/aaronleetw/random)
+random: A random number generator for my class. It was my first project using Svelte.
+
+----
+
+## [cyberfair-2022](https://pottery.pages.dev)
+cyberfair-2022: A website for the International CyberFair in 2022. It was the first project that uses [EZHTML](https://github.com/aaronleetw/EZHTML). The source code is avaliable [here](https://github.com/aaronleetw/cyberfair-2022). (This was my second time participating in the CyberFair.)
+
+----
+
+## [cyberfair-2021](https://restorer.online)
+cyberfair-2021: A website for the International CyberFair in 2021. It was my first time participating in the CyberFair, so the site is a little unpolished. The source code is avaliable [here](https://github.com/aaronleetw/cyberfair-2021).
 
 ----
 
