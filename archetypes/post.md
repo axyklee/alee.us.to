@@ -6,7 +6,7 @@ tags: []
 author: ["Me"]
 comments: true
 disableShare: true
-canonicalURL: "https://aaronlee.tech/posts/"
+canonicalURL: "https://aaronlee.live/posts/"
 UID: ""
 
 description: ""

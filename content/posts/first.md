@@ -6,7 +6,8 @@ tags: ["first", "non-tech"]
 author: ["Me"]
 comments: true
 disableShare: true
-canonicalURL: "https://aaronlee.tech/posts/first"
+noindex: false
+canonicalURL: "https://aaronlee.live/posts/first"
 UID: "first"
 
 description: ""

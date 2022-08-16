@@ -6,7 +6,8 @@ tags: []
 author: ["Me"]
 comments: false
 disableShare: true
-canonicalURL: "https://aaronlee.tech/projects/"
+noindex: false
+canonicalURL: "https://aaronlee.live/projects/"
 UID: "projects"
 
 description: "A full list of my projects."
@@ -24,7 +25,7 @@ ShowEditPost: false
 searchHidden: true
 ---
 
-## [Attendance System](https://abs.aaronlee.tech)
+## [Attendance System](https://abs.aaronlee.live)
 [this link might be dead because I'm not actively maintaining it]
 {{< carousel "/static/img/projects.md/attendance" >}}
 I made our school's shiny new online attendance system with the help of my homeroom teacher to replace the old paper-based system. It was used for about half a semester stably but was later dropped because the school's IT department decided the services this utilized was not suitable to our school's infrastructure. It is now [open-sourced here](https://github.com/aaronleetw/Attendance). I also created a much more robust [version 2](https://github.com/aaronleetw/Attendance/tree/v2) with MySQL, but was never presented.

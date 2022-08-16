@@ -13,6 +13,10 @@
     {{ .Description | markdownify }}
   </div>
   {{- end }}
+  {{- if eq .Title "Privates" }}
+  <br>
+  <h2>Sorry, but this page is private.</h2>
+  {{- end }}
 </header>
 {{- end }}
 
@@ -37,6 +41,7 @@
 {{- end }}
 
 {{- $term := .Data.Term }}
+{{- if not (eq .Title "Privates") }}
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
@@ -69,6 +74,7 @@
   {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
+{{- end }}
 {{- end }}
 
 {{- if gt $paginator.TotalPages 1 }}
