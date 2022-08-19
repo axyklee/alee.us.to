@@ -43,6 +43,7 @@
 {{- $term := .Data.Term }}
 {{- if not (eq .Title "Privates") }}
 {{- range $index, $page := $paginator.Pages }}
+{{- if not .Page.Params.hidden }}
 
 {{- $class := "post-entry" }}
 
@@ -74,6 +75,7 @@
   {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
+{{- end }}
 {{- end }}
 {{- end }}
 
