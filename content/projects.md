@@ -7,7 +7,7 @@ author: ["Me"]
 comments: false
 disableShare: true
 noindex: false
-canonicalURL: "https://aaronlee.live/projects/"
+canonicalURL: "https://alee.us.to/projects/"
 UID: "projects"
 
 description: "A full list of my projects."
@@ -25,10 +25,31 @@ ShowEditPost: false
 searchHidden: true
 ---
 
-## [Attendance System](https://abs.aaronlee.live)
-[this link might be dead because I'm not actively maintaining it]
+## [Attendance System](https://github.com/aaronleetw/Attendance)
 {{< carousel "/static/img/projects.md/attendance" >}}
 I made our school's shiny new online attendance system with the help of my homeroom teacher to replace the old paper-based system. It was used for about half a semester stably but was later dropped because the school's IT department decided the services this utilized was not suitable to our school's infrastructure. It is now [open-sourced here](https://github.com/aaronleetw/Attendance). I also created a much more robust [version 2](https://github.com/aaronleetw/Attendance/tree/v2) with MySQL, but was never presented.
+
+----
+
+## [minigames](https://apcs.pages.dev)
+
+A NextJS site with two mini-games I made for my APCSA Final Project. I made two games, TaiGuessr and TicTacToe. TaiGuessr is a geography game based on GeoGuessr I made from scratch. Built using [NextJS](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/).
+
+----
+
+## FRC [2024-RobotCode](https://github.com/savagetumaz6947/2024-RobotCode)
+
+This is the code repository for Parasaur, the FRC robot developed by Team 6947 Savage Tumaz for the 2023-2024 CRESCENDO Season. Parasaur competed in both the [Sacramento](https://www.thebluealliance.com/event/2024cada) (Rank 9, Alliance 4 First Pick) and [Central Valley](https://www.thebluealliance.com/event/2024cafr) (Rank 8, Alliance 4 First Pick) Regionals. We were honored to receive the Autonomous Award at the Sacramento Regional, and our team captain and lead programmer, Aaron Lee (me !!), was named a Dean's List Award Finalist at the Central Valley Regional.
+
+> In the crucible of competition, where the line between the autonomous period and teleop becomes a frontier for innovation, one team stands out by extending autonomous brilliance into the realm of teleoperation. Utilizing a sophisticated vision system, it not only localizes to its surroundings but hunts down Notes with the precision of a savage predator. Through the clever application of A-star and D-star algorithms, it seamlessly navigates the terrain plotting direct courses to the goals set by the drivers. - Central Valley Regional
+
+----
+
+## FRC [Savage Tracking](https://github.com/aaronleetw/savage-tracking)
+
+Time tracking app for FRC build season personnel management.
+
+Developed by Aaron (me), and used by my FRC Team 6947 Savage Tumaz throughout the 2023-2024 CRESCENDO season, this application serves a dual purpose. Firstly, it logs the hours dedicated by team members during the intensive build season. These hours are a factor in determining eligibility for participation in regional events for our team. Additionally, the application maintains an up-to-date roster, essential for compliance with our school's stringent access control policies.
 
 ----
 
@@ -48,12 +69,18 @@ random: A random number generator for my class. It was my first project using Sv
 
 ----
 
+## [cyberfair-2023](https://coral.pages.dev)
+cyberfair-2023: A website for the International CyberFair in 2023. It was the first project I made that used [Astro](https://astro.build/). The source code is avaliable [here](https://github.com/aaronleetw/cyberfair-2023). (This was my third time participating in the CyberFair.)
+
+
+----
+
 ## [cyberfair-2022](https://pottery.pages.dev)
 cyberfair-2022: A website for the International CyberFair in 2022. It was the first project that uses [EZHTML](https://github.com/aaronleetw/EZHTML). The source code is avaliable [here](https://github.com/aaronleetw/cyberfair-2022). (This was my second time participating in the CyberFair.)
 
 ----
 
-## [cyberfair-2021](https://restorer.online)
+## [cyberfair-2021](https://restorer.pages.dev/index.htm)
 cyberfair-2021: A website for the International CyberFair in 2021. It was my first time participating in the CyberFair, so the site is a little unpolished. The source code is avaliable [here](https://github.com/aaronleetw/cyberfair-2021).
 
 ----

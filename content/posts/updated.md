@@ -1,14 +1,14 @@
 ---
-title: "First Post"
-date: 2021-11-03
-aliases: ["first"]
-tags: ["first", "non-tech"]
+title: "Projects updated"
+date: 2024-07-30
+aliases: ["updated"]
+tags: ["update"]
 author: ["Me"]
 comments: true
 disableShare: true
 noindex: false
-canonicalURL: "https://alee.us.to/posts/first"
-UID: "first"
+canonicalURL: "https://alee.us.to/posts/updated"
+UID: "updated"
 
 description: ""
 
@@ -25,5 +25,6 @@ ShowEditPost: false
 searchHidden: false
 ---
 
-### First post!
-Exciting!
+### Projects updated
+
+Projects have been updated as of July 30, 2024.

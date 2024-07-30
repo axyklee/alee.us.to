@@ -1,4 +1,4 @@
-baseURL: "https://aarontech.xyz/"
+baseURL: "https://alee.us.to/"
 title: AaronTech
 paginate: 5
 theme: PaperMod
@@ -87,7 +87,7 @@ params:
     hiddenInSingle: true
 
   editPost:
-    URL: "https://github.com/aaronleetw/aaronlee.live/content"
+    URL: "https://github.com/aaronleetw/alee.us.to/content"
     Text: "Suggest Changes"
     appendFilePath: true
 
