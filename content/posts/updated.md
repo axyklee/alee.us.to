@@ -1,5 +1,5 @@
 ---
-title: "Projects updated"
+title: "Projects Updated"
 date: 2024-07-30
 aliases: ["updated"]
 tags: ["update"]

@@ -1,7 +1,14 @@
 {{- $scratch := newScratch }}
 
-{{- if not .Date.IsZero -}}
+{{- if not (eq (base64Encode .Params.lastMod) (base64Encode .Date)) -}}
+
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>Last Modified: %s</span>" (.Params.lastMod) (.Params.lastMod.Format (default "January 2, 2006" .Site.Params.DateFormat)))) }}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>Originally Published: %s</span>" (.Date) (.Date.Format (default "January 2, 2006" .Site.Params.DateFormat)))) }}
+
+{{- else -}}
+
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date.Format (default "January 2, 2006" .Site.Params.DateFormat)))) }}
+
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}

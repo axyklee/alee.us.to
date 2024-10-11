@@ -1,11 +1,12 @@
 ---
 title: ""
 date: YYYY-MM-DD
+lastMod: YYYY-MM-DD
 aliases: []
 tags: []
 author: ["Me"]
 comments: true
-disableShare: true
+disableShare: false
 canonicalURL: "https://alee.us.to/posts/"
 UID: ""
 

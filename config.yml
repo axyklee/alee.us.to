@@ -8,8 +8,6 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: G-9LDB5P3D3T
-disqusShortname: aarontech
 minify:
   disableXML: true
   minifyOutput: true
@@ -69,17 +67,19 @@ params:
   homeInfoParams:
     Title: "Hi there \U0001F44B, I'm Aaron"
     Subtitle: "A student from Taiwan"
-    Content: "Fun fact: I constantly swear while writing code"
+    Content: "Fun fact: I have aphantasia, which means I can't visualize things in my mind."
 
   socialIcons:
     - name: github
       url: "https://github.com/aaronleetw"
-    - name: instagram
-      url: "https://instagram.com/aaronleetw"
+    - name: linkedin
+      url: "https://linkedin.com/in/longyklee"
+    - name: email
+      url: "mailto:me@alee.us.to"
+    - name: reddit
+      url: "https://reddit.com/u/longyklee"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/15017153/he110w0r1d"
-    - name: twitter
-      url: "https://twitter.com/helloworld_tw_"
 
   cover:
     hidden: true

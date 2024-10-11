@@ -66,10 +66,6 @@ pre:hover .copy-code {
     display: block;
 }
 
-#disqus_thread {
-    margin-top: 80px;
-}
-
 .slick-initialized .slick-track {
     display: flex;
     align-items: center;
