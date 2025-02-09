@@ -71,15 +71,15 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/aaronleetw"
+      url: "https://github.com/axyklee"
     - name: linkedin
-      url: "https://linkedin.com/in/longyklee"
+      url: "https://linkedin.com/in/axyklee"
     - name: email
       url: "mailto:me@alee.us.to"
     - name: reddit
       url: "https://reddit.com/u/longyklee"
     - name: stackoverflow
-      url: "https://stackoverflow.com/users/15017153/he110w0r1d"
+      url: "https://stackoverflow.com/users/15017153/axyklee"
 
   cover:
     hidden: true
@@ -87,7 +87,7 @@ params:
     hiddenInSingle: true
 
   editPost:
-    URL: "https://github.com/aaronleetw/alee.us.to/content"
+    URL: "https://github.com/axyklee/alee.us.to/content"
     Text: "Suggest Changes"
     appendFilePath: true
 
