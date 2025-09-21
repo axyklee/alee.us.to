@@ -6,7 +6,7 @@ tags: ["update"]
 author: ["Me"]
 comments: true
 disableShare: true
-canonicalURL: "https://alee.us.to/posts/241011siteupdated"
+canonicalURL: "https://ayklee.com/posts/241011siteupdated"
 UID: "241011siteupdated"
 
 description: ""

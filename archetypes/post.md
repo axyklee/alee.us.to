@@ -7,7 +7,7 @@ tags: []
 author: ["Me"]
 comments: true
 disableShare: false
-canonicalURL: "https://alee.us.to/posts/"
+canonicalURL: "https://ayklee.com/posts/"
 UID: ""
 
 description: ""

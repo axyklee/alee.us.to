@@ -7,7 +7,7 @@ author: ["Me"]
 comments: true
 disableShare: true
 noindex: false
-canonicalURL: "https://alee.us.to/posts/updated"
+canonicalURL: "https://ayklee.com/posts/updated"
 UID: "updated"
 
 description: ""

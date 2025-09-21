@@ -1,4 +1,4 @@
-baseURL: "https://alee.us.to/"
+baseURL: "https://ayklee.com/"
 title: AaronTech
 paginate: 5
 theme: PaperMod
@@ -75,7 +75,7 @@ params:
     - name: linkedin
       url: "https://linkedin.com/in/axyklee"
     - name: email
-      url: "mailto:me@alee.us.to"
+      url: "mailto:me@ayklee.com"
     - name: reddit
       url: "https://reddit.com/u/longyklee"
     - name: stackoverflow
@@ -87,7 +87,7 @@ params:
     hiddenInSingle: true
 
   editPost:
-    URL: "https://github.com/axyklee/alee.us.to/content"
+    URL: "https://github.com/axyklee/ayklee.com/content"
     Text: "Suggest Changes"
     appendFilePath: true
 

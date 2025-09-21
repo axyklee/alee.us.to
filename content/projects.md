@@ -8,7 +8,7 @@ author: ["Me"]
 comments: false
 disableShare: true
 noindex: false
-canonicalURL: "https://alee.us.to/projects/"
+canonicalURL: "https://ayklee.com/projects/"
 UID: "projects"
 
 description: "A full list of my projects."
